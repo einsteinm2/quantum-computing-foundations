@@ -1,0 +1,49 @@
+\section{Del bit clásico al bit cuántico}
+
+Un \textbf{bit clásico} es la Unidad Fundamental de Información en la computación clásica y puede estar en un solo un estado a la vez: 0 o 1. Ahora, imagina que tienes una moneda y asignas
+\begin{align*}
+	\mbox{cara} & \to 0 \\
+	\mbox{sello} & \to 1
+\end{align*}
+
+Si lanzas la moneda y esta cae, al observarla sabes exactamente su valor: o es 0 o es 1; pero nunca ambos, es como si pudieras medir de alguna forma el bit y saber si es 0 o 1. Ahora imagina que la moneda no ha caído aún y está girando en el aire. Mientras gira, no está ni en “cara” ni en ``sello'', sino que digamos está en una mezcla de ambos lados. Esta propiedad de poder estar en esta ``mezcla'' o de coexistir en ambos estados a la vez es una de las propiedades que caracteriza a un \textbf{qubit} o bit cuántico la Unidad Fundamental de Información en Computación Cuántica y provienente de ``quantum'' + ``bit''. Por tanto, si pensamos en un contexto cuántico y consideramos ahora la notación de Dirac \cite{mcmahon2008quantum} para representar los dos posibles lados cara y sello de la moneda, tenemos:
+\begin{align*}
+	\mbox{cara} & \to \ket{0} \\
+	\mbox{sello} & \to \ket{1}
+\end{align*}
+
+Entonces, si la moneda esta girando su estado sería algo como
+\begin{align*}
+	\mbox{girando} & \to \alpha\ket{0} + \beta\ket{1}
+\end{align*}
+
+donde $\alpha$ y $\beta$ son amplitudes que sirven para indicar cuánto contribuye cada lado a ese estado particular de ``moneda girando''. \\
+
+Esta mezcla es lo que llamamos \textbf{combinación lineal} o \textbf{superposición cuántica} de estados. Las amplitudes $\alpha$ y $\beta$ juegan un papel importante en esta superposición. Primero, $\alpha$ y $\beta$ son números complejos ($\alpha, \beta \in \mathbb{C}$) y segundo para que esta superposición sea considerada un estado del qubit debe cumplirse que $|\alpha|^2 + |\beta|^2 = 1$. \\
+
+Ahora, si quisiéramos observar o medir en que estado está el qubit (así como cuando queremos saber el estado de un bit), el acto de medir hace que nuestra ``moneda cuántica'' deje de girar y muestre uno de sus dos lados posibles o probables. En ese momento, entonces decimos que el qubit \textbf{colapsa} a uno de sus estados base:
+
+\begin{itemize}
+	\item colapsa al estado $\ket{0}$ con una probabilidad $|\alpha|^2$  
+	\item o colapsa al estado $\ket{1}$ con una probabilidad $|\beta|^2$
+\end{itemize}
+
+Estas probabilidades siempre suman 1, $|\alpha|^2 + |\beta|^2 = 1$, lo que significa que la moneda siempre caerá mostrando algún lado, pero mientras está en el aire (antes de medir) su estado es una superposición válida de ambos estados. Esta es una de las ideas más poderosas de la computación cuántica:  \textit{un qubit puede contener más información que un bit clásico},  porque antes de ser medido puede representar simultáneamente muchas posibilidades. \\
+
+
+\noindent \textbf{Resumen}
+
+\begin{center}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{Concepto} & \textbf{Analogía} & \textbf{Representación} \\
+		\hline
+		Bit clásico & Moneda en reposo (cara o sello) & $0$ o $1$ \\
+		\hline
+		Qubit & Moneda girando (superposición) & $\alpha\ket{0} + \beta\ket{1}$ con $|\alpha|^2 + |\beta|^2 = 1$ \\
+		\hline
+		Medición & Moneda deja de girar (se fija en un estado) & Estado colapsa a $\ket{0}$ o $\ket{1}$ \\
+		\hline
+	\end{tabular}
+\end{center}
+

@@ -1,0 +1,51 @@
+\section{Representación vectorial}
+
+Un \textbf{qubit} es la unidad básica de información cuántica, análogo al bit clásico, pero con propiedades como la \textit{superposición} y el \textit{entrelazamiento} (que veremos más adelante).
+Así como en computación clásica podemos tener uno, dos o varios bits, en computación cuántica también podemos tener uno, dos o más qubits. Por ahora trabajaremos con un solo qubit, que puede estar en cualquiera de sus estados base ($\ket{0}$, $\ket{1}$) o en una superposición de ambos ( $\alpha\ket{0} + \beta\ket{1}$ ). Esto nos permitirá comprender su representación algebraica y las operaciones básicas que aplicaremos más adelante en Qiskit. \\
+
+Por otro lado, la computación cuántica se apoya en los espacios vectoriales, donde los estados cuánticos podemos representarlos como vectores y las operaciones que los transforman como matrices unitarias. Por ejemplo, los dos estados base de un solo qubit $\ket{0}$ y $\ket{1}$ pueden ser representados como vectores
+\begin{align*}
+	\ket{0} = \vzero, \quad \ket{1} = \vone \\
+\end{align*}
+
+y en el caso de una superposición $\ket{\psi} = \alpha\ket{0} + \beta\ket{1}$ con $\alpha, \beta \in \mathbb{C}$, podemos representarlo como
+
+\begin{align*}
+	\ket{\psi} = \alpha\ket{0} + \beta\ket{1}   &= \alpha\vzero + \beta\vone \\
+	&= \mymatrix{c}{\alpha \\ 0}+\mymatrix{c}{0 \\ \beta} \\
+	&= \mymatrix{c}{\alpha \\ \beta} \\
+\end{align*}
+
+\noindent Es decir podemos representar un estado cuántico $\ket{\psi}$ de un qubit como un vector columna
+
+\begin{align*}
+	\ket{\psi} = \mymatrix{c}{\alpha \\ \beta} &\mbox{, donde } |\alpha|^2 + |\beta|^2 = 1 \\
+\end{align*}
+
+Si queremos saber a que estado colapsa el qubit después de medirlo, basta con tomar el valor absoluto cuadrado de cada componente
+
+\begin{itemize}
+	\item $ Prob(\ket{0}) = |\alpha|^2 $
+	\item $ Prob(\ket{1}) = |\beta|^2 $
+\end{itemize}
+
+\begin{example}[Ejercicio 2.6 en \cite{wong2021introduction}]\label{eje2-6}
+	%\addcontentsline{toc}{subsubsection}{Ejemplo \theexample}
+	
+	Si un qubit esta en el estado
+	
+	$$\ket{\psi} = \frac{1+i\sqrt{3}}{3}\ket{0} + \frac{2-i}{3}\ket{1}$$
+	
+	entonces la probabilidad de obtener $\ket{0}$ y $\ket{1}$ respectivamente es
+	
+	\begin{itemize}
+		\item $ Prob(\ket{0}) = |\frac{1+i\sqrt{3}}{3}|^2 = \frac{1^2+(\sqrt{3})^2}{9} =\frac{4}{9} $
+		\item $ Prob(\ket{1}) = |\frac{2-i}{3}|^2 = \frac{2^2+(-1)^2}{9} = \frac{5}{9}$
+	\end{itemize}
+	
+	
+\end{example}
+
+En tal caso si midieramos el qubit, ya este no estaría en superposición de $\ket{0}$ y $\ket{1}$ , si no que sugiere que este colapsaría a $\ket{1}$ porque su probabiidad es mayor y por tanto $\ket{\psi}=\ket{1}$ después de la medición.
+
+
